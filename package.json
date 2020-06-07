@@ -8,8 +8,8 @@
       "start": "next start",
       "fake": "json-server --watch --port 3333 db.json",
       "serve": "serve out",
-      "predeploy": "npm rum next build && next export",
-      "deploy": "gh-pages -d out/"
+      "predeploy": "npm rum build",
+      "deploy": "npm rum start"
    },
    "dependencies": {
       "@types/axios": "^0.14.0",
