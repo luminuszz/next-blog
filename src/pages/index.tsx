@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-unescaped-entities */
 import { GetStaticProps } from 'next';
-import Router from 'next/router';
+import Link from 'next/link';
 import React, { useCallback } from 'react';
 
 import asideImage from '../assets/Bitmap.png';
@@ -25,10 +25,6 @@ interface Props {
 }
 
 const pages: React.FC<Props> = ({ posts }) => {
-   const handlePost = useCallback(id => {
-      Router.push(`/post/${id}`);
-   }, []);
-
    return (
       <>
          <GlobalStyle />
@@ -47,9 +43,9 @@ const pages: React.FC<Props> = ({ posts }) => {
                            <li> By Rickie Baroch</li>
                         </ul>
                         <br />
-                        <a href="" onClick={() => handlePost(array.id)}>
+                        <Link href="/post/[postId]" as={`/post/${array.id}`}>
                            More..
-                        </a>
+                        </Link>
                      </div>
                   </Card>
                ))}
