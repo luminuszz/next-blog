@@ -9,7 +9,7 @@
       "fake": "json-server --watch --port 3333 db.json",
       "serve": "serve out",
       "predeploy": "npm rum build",
-      "deploy": "npm rum start"
+      "deploy": "gh-pages -d out"
    },
    "dependencies": {
       "@types/axios": "^0.14.0",
